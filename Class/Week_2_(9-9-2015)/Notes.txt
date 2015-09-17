@@ -1,0 +1,2 @@
+1)Pushback, popoff
+2) arraySize * 2, when limit hit

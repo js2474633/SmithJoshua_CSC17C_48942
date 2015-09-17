@@ -1,0 +1,18 @@
+log2 (x) = log10 (x) / log10 (2)
+
+DATA[Link] => DATA[Link] => DATA[Link]=>NULL
+
+N=100 Op=50K
+N=200 Op=190K
+N=400 Op=750K
+
+190/50=3.8
+750/190=3.9
+
+N -> 2N
+O(N^2)
+O(2N)^2 = O(4N^2)
+
+N=200,000 T=94s
+N=100,000 T=24s
+N=50,000 T=6s

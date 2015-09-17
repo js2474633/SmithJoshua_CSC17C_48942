@@ -1,0 +1,13 @@
+
+
+Modify Simple Vector .h by adding 2 functions then test to make sure they are working properly.
+
+Found in Github link on the homepage.
+
+1)  Add a push routine that will augment the array by 1 and double at the top to hold the new value pushed.
+
+2)  Add a pull routine that takes one value off the top of the array and decreases the size by 1.
+
+3)  Create a Github account using your first 2 intials and student id.  Configure a repository exactly as I have done.  Place your work inside this repository.  Make mlehrjava a collaborator of your repository.
+
+Submit your solution here, and send an email which copies yourself to mark.lehr@rcc.edu with subject: Lastname, Firstname - Assignment 2 - 48942
