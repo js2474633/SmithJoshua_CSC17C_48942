@@ -45,6 +45,8 @@ public:
 
    //Pop (Remove last element, decrement size by 1)
    void pop_back();
+
+   void print();
 };
 
 //***********************************************************
@@ -164,7 +166,8 @@ void SimpleVector<T>::push_back(T elem)
     if(arraySize == capSize)
     {
         capSize *= 2;
-        T *temp = new T [capSize];
+        T *temp;
+        temp = new T [capSize];
         for (int i = 0; i < capSize; i++)
         {
             if(i < arraySize)
@@ -176,8 +179,8 @@ void SimpleVector<T>::push_back(T elem)
                 temp[i] = 0;
             }
         }
-        *aptr = temp;
-        delete[] *temp;
+        *aptr = *temp;
+        delete[] temp;
 
     }
     //Add element
@@ -191,6 +194,16 @@ template <class T>
 void SimpleVector<T>::pop_back()
 {
     arraySize--;
+}
+
+template <class T>
+void SimpleVector<T>::print()
+{
+    for(int i = 0; i < arraySize; i++)
+    {
+        cout << aptr[i];
+    }
+    cout << endl;
 }
 
 #endif

@@ -15,18 +15,27 @@
 
 using namespace std;
 
-void testPrint(int* p)
-{
-    for(int i = 0; i < p.size(); i++)
-    {
-        cout << p[i];
-    }
-}
 
 int main()
 {
-    int* test = new SimpleVector(5);
-    testPrint(test);
+    SimpleVector<int> test(5);
+    cout << "Printing SimpleVector with size: " << test.size() << endl;
+    test.print();
+
+    cout << "Pushing back with element '1'" << endl;
+    test.push_back(1);
+    test.print();
+
+    cout << "Pushing back with multiple elements" << endl;
+    for(int i = 0; i < 3; i++)
+    {
+        test.push_back(i);
+    }
+    test.print();
+
+    cout << "Popping back last element" << endl;
+    test.pop_back();
+    test.print();
 
     return 0;
 }
