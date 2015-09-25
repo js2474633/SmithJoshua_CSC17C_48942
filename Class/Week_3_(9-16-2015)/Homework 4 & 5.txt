@@ -1,0 +1,26 @@
+Assignment 4 09/25/15
+
+Create a simple vector class utilizing a singly link-list class that has push,  etc...  behaviors.
+
+Compare to the array implementation.
+
+Submit here and send an email which copies yourself to mark.lehr@rcc.edu with subject:  Lastname, Firstname - Assignment 4 - 48942
+
+
+Assignment 5 More Linked Lists 09/30/15
+
+Part 1
+Add  to your linked list
+
+First and Last Functions
+Prepend
+Append
+Copy Constructor and Assignment Operator
+Extract
+InsertAfter and InsertBefore
+
+Part 2
+
+Now template and make it work for Objects!
+
+Submit here, email, post at Github.  Copy yourself on email, and send to mark.lehr@rcc.edu with subject:  Lastname, Firstname - Assignment 5 - 48942
