@@ -1,72 +1,15 @@
-#ifndef LLVECTOR_H
-#define LLVECTOR_H
+/*
+#include "llvector.h"
 
-#include <cstddef>
-#include <sstream>
-using namespace std;
-
-template <class T>
-class LLVector
-{
-private:
-    struct Link
-    {
-        T data;
-        Link *next;
-    };
-    Link *head;
-    Link *current;
-    int size;
-public:
-    LLVector(T);
-    LLVector(LLVector<T>&);
-    void append(T);
-    void prepend(T);
-    T first();
-    T last();
-    void extract(T);
-    void insertBefore(T,T);
-    void insertAfter(T,T);
-    string toString();
-    T &operator[](const int &);
-    virtual ~LLVector();
-    int getSize();
-};
-
-template <class T>
-LLVector<T>::LLVector(T d)
+LLVector::LLVector(int d)
 {
     Link *block = new Link;
     block->data = d;
     block->next=NULL;
     head = block;
-    size = 1;
 }
 
-template <class T>
-LLVector<T>::LLVector(LLVector<T>& copy)
-{
-    Link *prev;
-    Link *block;
-    for(int i = 0; i < copy.getSize(); i++)
-    {
-        block = new Link;
-        block->data = copy[i];
-        block->next = NULL;
-        if(i == 0)
-        {
-            head = block;
-        }
-        else
-        {
-            prev->next = block;
-        }
-        prev = block;
-    }
-}
-
-template <class T>
-void LLVector<T>::append(T d)
+void LLVector::append(int d)
 {
     Link *prev;
     //If at the beginning of the chain
@@ -84,7 +27,6 @@ void LLVector<T>::append(T d)
         block->next = NULL;
         //Set previous Link pointer to new Link
         prev->next = block;
-        size++;
     }
     //If already at the end(?)
     else
@@ -95,31 +37,26 @@ void LLVector<T>::append(T d)
         block->next = NULL;
         //Set previous Link pointer to new Link
         prev->next = block;
-        size++;
     }
 }
 
-template <class T>
-void LLVector<T>::prepend(T d)
+void LLVector::prepend(int d)
 {
     //Insert new Link
     Link *block = new Link;
     block->data = d;
     block->next = head;
     head = block;
-    size++;
 }
 
 //Returns first data value
-template <class T>
-T LLVector<T>::first()
+int LLVector::first()
 {
     return head->data;
 }
 
 //Returns last data value
-template <class T>
-T LLVector<T>::last()
+int LLVector::last()
 {
     Link *prev;
     current = head;
@@ -130,45 +67,37 @@ T LLVector<T>::last()
 }
 
 //Deletes selected data value
-template <class T>
-void LLVector<T>::extract(T find)
+void LLVector::extract(int find)
 {
     Link *prev;
-    Link *found;
     if(head->data != find)
     {
         current = head;
         do{
             if(current->data == find)
             {
-                prev->next = current->next;
-                found = current;
-                size--;
+                prev = current->next;
+                delete current;
             }
             else
                 prev = current;
         }while(current = current->next);
+
     }
     else if(head->data == find)
     {
         current = head;
         head = current->next;
-        found = current;
-        size--;
+        delete current;
     }
     else
     {
         //Nothing found to be extracted
     }
-    if(found)
-    {
-        delete found;
-    }
 }
 
 //Creates new Link before selected data value
-template <class T>
-void LLVector<T>::insertBefore(T create, T find)
+void LLVector::insertBefore(int create, int find)
 {
     Link *prev;
     if(head->data != find)
@@ -182,7 +111,6 @@ void LLVector<T>::insertBefore(T create, T find)
                 block->data = create;
                 block->next = prev->next;
                 prev->next = block;
-                size++;
             }
             else
                 prev = current;
@@ -195,7 +123,6 @@ void LLVector<T>::insertBefore(T create, T find)
         block->data = create;
         block->next = head;
         head = block;
-        size++;
     }
     else
     {
@@ -204,8 +131,7 @@ void LLVector<T>::insertBefore(T create, T find)
 }
 
 //Creates new Link after selected data value
-template <class T>
-void LLVector<T>::insertAfter(T create, T find)
+void LLVector::insertAfter(int create, int find)
 {
     Link *prev;
     if(head->data != find)
@@ -218,7 +144,6 @@ void LLVector<T>::insertAfter(T create, T find)
                 block->data = create;
                 block->next = current->next;
                 current->next = block;
-                size++;
             }
             else
                 prev = current;
@@ -232,7 +157,6 @@ void LLVector<T>::insertAfter(T create, T find)
         block->next = head->next;
         //Set previous Link pointer to new Link
         head->next = block;
-        size++;
     }
     else
     {
@@ -241,8 +165,7 @@ void LLVector<T>::insertAfter(T create, T find)
 }
 
 //Copied for testing
-template <class T>
-string LLVector<T>::toString(){
+string LLVector::toString(){
     string build="";
     char counter=48;
     if(head){
@@ -260,19 +183,7 @@ string LLVector<T>::toString(){
     return build;
 }
 
-template <class T>
-T &LLVector<T>::operator[](const int &sub)
-{
-    current = head;
-    for(int i = 0; i < sub; i++)
-    {
-        current = current->next;
-    }
-    return current->data;
-}
-
-template <class T>
-LLVector<T>::~LLVector()
+LLVector::~LLVector()
 {
     if(head)
     {
@@ -285,11 +196,4 @@ LLVector<T>::~LLVector()
         }while(head);
     }
 }
-
-template <class T>
-int LLVector<T>::getSize()
-{
-    return size;
-}
-
-#endif // LLVECTOR_H
+*/

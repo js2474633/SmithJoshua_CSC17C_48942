@@ -1,0 +1,12 @@
+Calculate average, median, mode
+avg, Sum/number
+median, sort => middle element
+mode, highest frequency value(s)
+
+Utilize vector instead of dynamic array.
+vector(array) {1,2,3,1,2} (Data)
+Create Set(vector) {1,2,3} (unique elements)
+Create Map(set, value) => (key, 0) {(1,2),(2,2),(3,1)}
+
+Find Maximum
+Create mode list

@@ -37,10 +37,10 @@ int main()
 
         testChain.extract(0);
         cout << "Extract 0: \n" << testChain.toString() << endl;
-        //testChain.extract(4);
-        //cout << "Extract 4: " << testChain.toString() << endl;
-        //testChain.extract(6);
-        //cout << "Extract 6: " << testChain.toString() << endl;
+        testChain.extract(4);
+        cout << "Extract 4: \n" << testChain.toString() << endl;
+        testChain.extract(6);
+        cout << "Extract 6: \n" << testChain.toString() << endl;
 
         testChain.insertBefore(4,5);
         cout << "Insert 4: \n" << testChain.toString() << endl;
@@ -48,8 +48,8 @@ int main()
         testChain.insertAfter(6,5);
         cout << "Insert 6: \n" << testChain.toString() << endl;
 
-        //LLVector<int> copyChain(testChain);
-        //cout << "Copy of Vector: " << copyChain.toString() << endl;
+        LLVector<int> copyChain(testChain);
+        cout << "Copy of Vector: \n" << copyChain.toString() << endl;
 
         cout << "Fifth value: " << testChain[4] << endl;
     }
